@@ -48,7 +48,7 @@ let createJavaClass = function(tables, init) {
 	    fo.writeLine("@Table(DatabaseObjectName = \""+ item.code +"\"  ,ServicePath = \"/"+ item.path +"\",indexNum= \"50003\", Common = \"" + item.name + "\")");
 	    fo.writeLine("public class "+ item.classname +"  extends ASoftDeleteBean {");
 	    
-	    item.column.forEach(function(col){
+	    item.columns.forEach(function(col){
 	    	if(au.indexOf(col.code) == -1){
     		  if("bigint" == col.datatype){
 		    	fo.writeLine();

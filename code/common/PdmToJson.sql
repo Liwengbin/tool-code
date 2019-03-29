@@ -1,4 +1,6 @@
-/*pdm是一个数据库设计软件*/
+/*pdm是一个数据库设计软件
+* 将 PowerDesigner 15 Physical Data Model File 模型中的数据库表的相关内容以JSON的数据格式 提取到xxx.txt文件中
+*/
 Option Explicit  
 ValidationMode = True  
 InteractiveMode = im_Batch   
@@ -18,8 +20,9 @@ End If
 '调用的处理程序 
 Private sub ProcessFolder(folder)
    Dim Tab '要处理的表  
+   objTextFile.write("[")
    for each Tab in folder.Tables    
-        objTextFile.write("{code:'" + Tab.code +"',name:'" + Tab.name+"',classname:'',path:'/',column:[")
+        objTextFile.write("{code:'" + Tab.code +"',name:'" + Tab.name+"',classname:'',path:'/',columns:[")
          Dim col ' 要处理的列  
          for each col in Tab.columns  
             objTextFile.write("{code: '")
@@ -32,5 +35,6 @@ Private sub ProcessFolder(folder)
          next  
       'end if 
       objTextFile.writeline("]},")
-   next   
+   next  
+   objTextFile.write("]") 
 end sub
