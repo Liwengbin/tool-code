@@ -1,7 +1,6 @@
-/*
-*pdm是一个数据库设计软件
-*将数据库表中的所有小写转为大写 包括表名，列名
-*/
+' pdm是一个数据库设计软件
+' 将数据库表中的所有小写转为大写 包括表名，列名
+
 Option Explicit  
 ValidationMode = True  
 InteractiveMode = im_Batch  
