@@ -1,6 +1,6 @@
-/*pdm是一个数据库设计软件
-* 将 PowerDesigner 15 Physical Data Model File 模型中的数据库表的相关内容以JSON的数据格式 提取到xxx.txt文件中
-*/
+' pdm是一个数据库设计软件
+' 将 PowerDesigner 15 Physical Data Model File 模型中的数据库表的相关内容以JSON的数据格式 提取到xxx.txt文件中
+
 Option Explicit  
 ValidationMode = True  
 InteractiveMode = im_Batch   
